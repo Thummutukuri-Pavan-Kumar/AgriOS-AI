@@ -10,20 +10,20 @@ class IrrigationRequest(BaseModel):
     weather_forecast: Optional[str] = None  # Sunny, Rainy, Cloudy, etc.
 
 class IrrigationSchedule(BaseModel):
-    day: int  # Day of the week (1-7)
-    time: str  # e.g., "6:00 AM"
+    day: int  
+    time: str  
     duration_minutes: int
     water_amount_liters: float
-    method: str  # Drip, Sprinkler, Flood
+    method: str  
 
 class IrrigationRecommendation(BaseModel):
     crop_name: str
     soil_type: str
     area_acres: float
-    water_requirement: str  # e.g., "500 liters/acre/day"
+    water_requirement: str  
     weekly_schedule: List[IrrigationSchedule]
-    total_weekly_water: float  # Total liters for the week
-    savings_estimate: str  # e.g., "Save 30% water"
+    total_weekly_water: float  
+    savings_estimate: str  
     tips: List[str]
     generated_at: datetime
 

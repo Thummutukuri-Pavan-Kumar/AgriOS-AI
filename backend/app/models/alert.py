@@ -19,7 +19,3 @@ class Alert(Base):
     read_at = Column(DateTime(timezone=True), nullable=True)
 
     user = relationship("User", back_populates="alerts")
-
-# Update User model to include alerts relationship
-# Add to backend/app/models/user.py:
-# alerts = relationship("Alert", back_populates="user", cascade="all, delete-orphan")
