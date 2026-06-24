@@ -322,7 +322,7 @@ Licensed under the MIT License.
 
 📧 Email: [pavankumarthummutukuri@gmail.com](mailto:pavankumarthummutukuri@gmail.com)
 
-🔗 LinkedIn: https://www.linkedin.com/in/pavan-kumar-bb0b56291
+🔗 LinkedIn: www.linkedin.com/in/thummutukuri-pavan-kumar-2a097b2b6
 
 🐙 GitHub: https://github.com/Thummutukuri-Pavan-Kumar
 
