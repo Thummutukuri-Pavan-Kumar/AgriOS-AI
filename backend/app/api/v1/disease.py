@@ -8,7 +8,8 @@ import uuid
 import json
 from PIL import Image
 import numpy as np
-import cv2
+#import cv2
+from PIL import Image
 
 from app.core.database import get_db
 from app.models.user import User
