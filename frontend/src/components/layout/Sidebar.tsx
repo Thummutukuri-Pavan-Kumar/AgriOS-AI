@@ -5,7 +5,7 @@ import { useLanguage } from '../../context/LanguageContext'
 import {
   LayoutDashboard, Sprout, Bug, Droplets, TrendingUp,
   DollarSign, ShoppingCart, FileText, MessageSquare,
-  Map, Bell, User, LogOut, Leaf
+  Bell, User, LogOut, Leaf
 } from 'lucide-react'
 
 const navItems = [
@@ -49,6 +49,7 @@ export default function Sidebar() {
 
   return (
     <div className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col">
+      {/* Logo */}
       <div className="p-6 border-b border-gray-800">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-green-600 rounded-lg flex items-center justify-center">
@@ -61,39 +62,37 @@ export default function Sidebar() {
         </div>
       </div>
 
+      {/* Navigation */}
       <nav className="flex-1 overflow-y-auto p-3 space-y-1">
         {navItems.map((item) => (
-          item.soon ? (
-            <div key={item.path}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 cursor-not-allowed">
-              <item.icon className="w-4 h-4" />
-              <span className="text-sm">{t(item.key)}</span>
-              <span className="ml-auto text-xs bg-gray-800 text-gray-500 px-1.5 py-0.5 rounded">Soon</span>
-            </div>
-          ) : (
-            <NavLink key={item.path} to={item.path}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
-                  isActive
-                    ? 'bg-green-600 text-white'
-                    : 'text-gray-400 hover:bg-gray-800 hover:text-white'
-                }`
-              }>
-              <item.icon className="w-4 h-4" />
-              {t(item.key)}
-              {item.path === '/alerts' && unreadCount > 0 && (
-                <span className="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-                  {unreadCount}
-                </span>
-              )}
-            </NavLink>
-          )
+          <NavLink 
+            key={item.path} 
+            to={item.path}
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+                isActive
+                  ? 'bg-green-600 text-white'
+                  : 'text-gray-400 hover:bg-gray-800 hover:text-white'
+              }`
+            }
+          >
+            <item.icon className="w-4 h-4" />
+            <span>{t(item.key)}</span>
+            {item.path === '/alerts' && unreadCount > 0 && (
+              <span className="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                {unreadCount}
+              </span>
+            )}
+          </NavLink>
         ))}
       </nav>
 
+      {/* Logout */}
       <div className="p-3 border-t border-gray-800">
-        <button onClick={handleLogout}
-          className="flex items-center gap-3 px-3 py-2 w-full rounded-lg text-gray-400 hover:bg-red-900/30 hover:text-red-400 transition-colors text-sm">
+        <button 
+          onClick={handleLogout}
+          className="flex items-center gap-3 px-3 py-2 w-full rounded-lg text-gray-400 hover:bg-red-900/30 hover:text-red-400 transition-colors text-sm"
+        >
           <LogOut className="w-4 h-4" />
           {t('logout')}
         </button>
