@@ -14,14 +14,10 @@ app = FastAPI(
 )
 
 # CORS - Allow all origins for now (fix for production)
+# CORS - Allow ALL origins for production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://agri-os-ai-snowy.vercel.app",  # Your Vercel URL
-        "https://agrios-ai.vercel.app",        # Alternative Vercel URL
-        "http://localhost:5173",               # Local development
-        "http://localhost:5174",               # Local development alternative
-    ],
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
