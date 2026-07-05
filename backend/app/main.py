@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import Base, engine
-from app.api.v1 import auth, copilot, farm, crops, disease, irrigation , profit , market , schemes,alerts , translate
-from app.api.v1 import yield_forecast
+from app.api.v1 import auth, copilot, farm, crops, disease, irrigation, yield_forecast, profit, market, schemes, alerts, translate
 from app.models import user, farm as farm_model
 
 # Create all tables
@@ -14,10 +13,15 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS
+# CORS - Allow all origins for now (fix for production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174"],
+    allow_origins=[
+        "https://agri-os-ai-snowy.vercel.app",  # Your Vercel URL
+        "https://agrios-ai.vercel.app",        # Alternative Vercel URL
+        "http://localhost:5173",               # Local development
+        "http://localhost:5174",               # Local development alternative
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
