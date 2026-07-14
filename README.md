@@ -1,5 +1,12 @@
 # 🌾 AgriOS AI — Autonomous Farm Intelligence Platform
 
+Live Demo :
+==========
+🌐 Frontend: https://agri-os-ai-snowy.vercel.app
+
+📚 API Documentation: https://agrios-backend-ogsh.onrender.com/docs
+
+⚙️ Backend API: https://agrios-backend-ogsh.onrender.com
 ## 📋 Overview
 
 **AgriOS AI** is an AI-powered operating system for farmers that helps them make better decisions throughout the entire farming lifecycle. Unlike traditional agriculture apps that only provide crop recommendations or weather updates, AgriOS AI acts as a **digital farm manager**, **risk predictor**, and **AI copilot**.
